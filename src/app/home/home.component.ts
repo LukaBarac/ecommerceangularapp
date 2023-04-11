@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product/product.service';
+import { Product } from '../shared/product/product';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -8,12 +11,21 @@ import { ProductService } from '../services/product/product.service';
 })
 export class HomeComponent implements OnInit{
 
-  products:String[] = [];
+  products:Product[] = [];
 
-  constructor(private productService:ProductService) {}
+  constructor(private productService:ProductService, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getAll();
+
+    this.route.params.subscribe(params => {
+      if(params['searchTerm'])  /* ovo searchTerm i tag dolazi iz routing modula */
+        this.products = this.productService.getAllProductsBySearchTerm(params['searchTerm'])
+      else if(params['tag'])
+        this.products = this.productService.getAllProductsByTag(params['tag'])  
+      else
+        this.products = this.productService.getAll();
+      })
+
   }
 
 }
