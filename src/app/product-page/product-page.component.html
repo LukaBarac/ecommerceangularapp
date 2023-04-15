@@ -1,4 +1,5 @@
-<div class="container">
+<app-not-found [visible]="!product" notFoundMessage="Product Not Found!" resetLinkText="Back To Home Page"></app-not-found>
+<div *ngIf="product" class="container">  <!-- ngif i appnotfound za slucaj da user recimo ima bookmark za id koji sam obrisao -->
     <img [src]="product.imageUrl" [alt]="[product.name]">
 
 <div class="details">
@@ -26,7 +27,7 @@
     <div class="price">
         <span>{{product.price|currency}}</span>
     </div>
-    <button>Add To Cart</button>
+    <button (click)="addToCart()">Add To Cart</button>
 </div>
 
 </div>

@@ -10,6 +10,8 @@ import { SearchComponent } from './search/search.component'
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProductPageComponent } from './product-page/product-page.component';
     HomeComponent,
     SearchComponent,
     TagsComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CartPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
