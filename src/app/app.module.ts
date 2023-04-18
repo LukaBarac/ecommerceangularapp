@@ -13,7 +13,9 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table'; 
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component'; 
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -24,15 +26,17 @@ import {MatTableModule} from '@angular/material/table';
     TagsComponent,
     ProductPageComponent,
     CartPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DhmStarRatingComponent,
     FormsModule,
-    BrowserAnimationsModule,
-    MatTableModule
+    BrowserAnimationsModule,  /* angular material je sam ubacio? */    /* da bi mat moduli radili direktno preko app modula */
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
