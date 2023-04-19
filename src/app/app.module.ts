@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component'; 
 import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { MaterialModule } from './material.module';
     DhmStarRatingComponent,
     FormsModule,
     BrowserAnimationsModule,  /* angular material je sam ubacio? */    /* da bi mat moduli radili direktno preko app modula */
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
