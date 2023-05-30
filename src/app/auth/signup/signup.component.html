@@ -1,8 +1,14 @@
 <section>
-    <form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayoutGap="5px">
 
         <mat-form-field color="accent">
-            <input type="email" matInput color="accent" placeholder="Your name" ngModel name="email">
+            <input type="email" matInput color="accent" placeholder="Your name" 
+            ngModel name="email"
+            required
+            email 
+            #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">Please use the correct email format</mat-error>
         </mat-form-field>
 
         <mat-form-field color="accent" hintLabel="Please enter minimum if 3 characters">
@@ -14,7 +20,22 @@
             <mat-hint align="end">{{ passInput.value?.length }} / 3</mat-hint>
         </mat-form-field>
 
-        <button type="submit" mat-raised-button style="background-color:#f08a05">Submit</button>
+        <button type="submit" 
+        mat-raised-button 
+        style="background-color:#f08a05"
+        [disabled]="form.invalid">
+        Submit
+        </button>
+
+        <mat-checkbox color="accent"
+        ngModel
+        name="acceptance"
+        required>
+        I accept the terms and conditions
+        </mat-checkbox>
+
+        <mat-label *ngIf="errorExists">{{ errorText }}</mat-label>
+        <a routerLink="/login">Go back to login page</a>
 
     </form>
 </section>

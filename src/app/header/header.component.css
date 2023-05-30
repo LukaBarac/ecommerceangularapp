@@ -23,3 +23,26 @@ a.logo{
     font-weight: bold;
     padding: 1em;       
 }
+
+nav {
+    margin-left: auto;
+  }
+  
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    display: block;
+    padding: 1em;
+  }
+  

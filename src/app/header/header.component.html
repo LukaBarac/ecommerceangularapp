@@ -4,7 +4,18 @@
         <nav>
             <ul>
                 <li>
+                    <a href="#" routerLink="/login">Login</a>
+                </li>
+                <li>
+                    <a href="#" routerLink="/signup">Signup</a>
+                </li>
+                <li>
                     <a href="#" routerLink="/cart-page">Cart</a>
+                </li>
+                <li>
+                    <button mat-raised-button color="warn" (click)="openProfile(this.userService.currentUser.id)">
+                        {{ this.userService.currentUser.email }}
+                    </button>
                 </li>
             </ul>
         </nav>

@@ -1,1 +1,35 @@
-<p>login works!</p>
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center" #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayoutGap="5px">
+
+        <mat-form-field color="accent">
+            <input type="email" matInput color="accent" placeholder="Your name" 
+            ngModel name="email"
+            required
+            email 
+            #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">Please use the correct email format</mat-error>
+        </mat-form-field>
+
+        <mat-form-field color="accent" hintLabel="Please enter minimum if 3 characters">
+            <input type="password" matInput placeholder="Your password" 
+            ngModel name="password"
+            required
+            minlength="3"
+            #passInput="ngModel">
+            <mat-hint align="end">{{ passInput.value?.length }} / 3</mat-hint>
+        </mat-form-field>
+
+        <button type="submit" 
+        mat-raised-button 
+        style="background-color:#f08a05"
+        [disabled]="form.invalid">
+        Submit
+        </button>
+
+        <mat-label *ngIf="errorExists">{{ errorText }}</mat-label>
+        <a routerLink="/signup">Don't have an account? Sign up here</a>
+
+    </form>
+</section>
+

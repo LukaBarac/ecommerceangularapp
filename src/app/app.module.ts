@@ -17,6 +17,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component'; 
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { UserService } from './auth/user.service';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CartPageComponent,
     NotFoundComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UserService], 
+  bootstrap: [AppComponent],
+  entryComponents: [ProfileComponent] // call only when needed 
 })
 export class AppModule { }
