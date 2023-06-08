@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -24,7 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatIconModule,
         MatDialogModule,
         FormsModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatTableModule
     ],
     exports: [
         MatButtonModule,
@@ -35,7 +36,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatIconModule,
         MatDialogModule,
         FormsModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatTableModule
     ]
 })
 

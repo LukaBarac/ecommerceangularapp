@@ -3,9 +3,9 @@
         <mat-icon matListIcon>close</mat-icon>
     </button>
 
-    <button mat-icon-button>
+    <button mat-icon-button (click)="changeEditing()">
         <mat-icon matListIcon *ngIf="this.profileForInput.id == this.userService.currentUser.id"
-        (click)="this.isEditing = !this.isEditing">edit</mat-icon>
+        >edit</mat-icon>
     </button>
 </div>
 
@@ -41,7 +41,7 @@
                 <mat-form-field hintLabel="Minimum 3 characters">
                     <input matInput type="password" placeholder="Enter your password" ngModel name="password" minlength="3"
                     [(ngModel)]="this.profileForInput.password" password required #passwordInput="ngModel">
-                    <mat-hint align="end">{{ passwordInput.value?.length / 3 }}</mat-hint>
+                    <mat-hint align="end">{{ passwordInput.value?.length + "/ 3" }}</mat-hint>
                 </mat-form-field>
 
             </div>
@@ -68,7 +68,7 @@
 
         </mat-card>
         
-        <button *ngIf="this.isEditing" mat-raised-button type="submit" color="primary">Save user</button>
+        <button *ngIf="this.isEditing" mat-raised-button type="submit" style="background-color:#f08a05; color:white">Save user</button>
 
     </form>
     <br>

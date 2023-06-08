@@ -1,33 +1,51 @@
 <app-not-found [visible]="!product" notFoundMessage="Product Not Found!" resetLinkText="Back To Home Page"></app-not-found>
 <div *ngIf="product" class="container">  <!-- ngif i appnotfound za slucaj da user recimo ima bookmark za id koji sam obrisao -->
+<div class="info">
     <img [src]="product.imageUrl" [alt]="[product.name]">
 
-<div class="details">
-    <div class="header">
-        <span class="name">
-            {{product.name}}
-        </span>
-        <span class="favorite {{product.favorite?'':'not'}}">
-            ❤
-        </span>
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{product.name}}
+            </span>
+            <span class="favorite {{product.favorite?'':'not'}}">
+                ❤
+            </span>
+        </div>
+        <div class="rating">
+            <dhm-star-rating
+                [value]="product.stars"
+                [starCount]="5"
+                selectedColor="red"
+                hoverColor="lightgray"
+                size="30px"
+                [readOnly]="false">
+            </dhm-star-rating>
+        </div>
+        <div class="tags">                              <!-- nema zagrade jer mu dajem bukv vrednost, ne promenljivu -->
+            <app-tags [productPageTags]="product.tags" justifyContent="start"></app-tags>
+        </div>
+        <div class="price">
+            <span>{{product.price|currency}}</span>
+        </div>
+        <button (click)="addToCart()">Add To Cart</button>
     </div>
-    <div class="rating">
-        <dhm-star-rating
-            [value]="product.stars"
-            [starCount]="5"
-            selectedColor="red"
-            hoverColor="lightgray"
-            size="30px"
-            [readOnly]="false">
-        </dhm-star-rating>
-    </div>
-    <div class="tags">                              <!-- nema zagrade jer mu dajem bukv vrednost, ne promenljivu -->
-        <app-tags [productPageTags]="product.tags" justifyContent="start"></app-tags>
-    </div>
-    <div class="price">
-        <span>{{product.price|currency}}</span>
-    </div>
-    <button (click)="addToCart()">Add To Cart</button>
 </div>
+<div class="specifications">
+    <h2>Specifications</h2>
+    <table mat-table [dataSource]="specifications">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let specification">{{ specification.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let specification">{{ specification.value }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name', 'value']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name', 'value'];"></tr>
+    </table>
+  </div>
 
 </div>

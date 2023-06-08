@@ -3,6 +3,8 @@ import { Product } from '../shared/product/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product/product.service';
 import { CartService } from '../services/cart/cart.service';
+import { Specification } from '../services/product/product.service'; // Import the Specification interface
+
 
 @Component({
   selector: 'app-product-page',
@@ -12,6 +14,7 @@ import { CartService } from '../services/cart/cart.service';
 export class ProductPageComponent implements OnInit{
 
   product!: Product;
+  specifications!: Specification[];
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, 
     private cartService:CartService, private router:Router) {
@@ -19,6 +22,7 @@ export class ProductPageComponent implements OnInit{
     activatedRoute.params.subscribe((params) => {
       if(params['id'])
         this.product = productService.getProductById(params['id'])
+        this.specifications = productService.getSpecifications(this.product.id)
     })
   }
 
@@ -30,4 +34,6 @@ export class ProductPageComponent implements OnInit{
   ngOnInit(): void {
     
   }
+
+
 }

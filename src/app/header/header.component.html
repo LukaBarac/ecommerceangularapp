@@ -1,6 +1,8 @@
 <header>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <div class="container">
-        <a href="#" routerLink="/" class="logo">logo placeholder</a>
+        <a href="#" routerLink="/" class="logo">Virus.com</a>
         <nav>
             <ul>
                 <li>
@@ -13,8 +15,9 @@
                     <a href="#" routerLink="/cart-page">Cart</a>
                 </li>
                 <li>
-                    <button mat-raised-button color="warn" (click)="openProfile(this.userService.currentUser.id)">
-                        {{ this.userService.currentUser.email }}
+                    <button mat-raised-button style="background-color:#f8a01c; color:white" (click)="openProfile(this.userService.currentUser.id)">
+                        <i class="material-icons">account_circle</i>
+                        <span class="email-text">{{ this.userService.currentUser.email }}</span> 
                     </button>
                 </li>
             </ul>

@@ -9,5 +9,5 @@ export class Product{
      favorite:boolean = false;
      stars:number = 0;
      imageUrl!:string;
- 
+     specifications?:string[];
  }
