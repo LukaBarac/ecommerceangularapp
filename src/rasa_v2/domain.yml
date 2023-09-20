@@ -1,0 +1,56 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - buy_phone
+  - buy_tv
+  - buy_headphones
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hello! How can I assist you today?"
+  - text: "Hi there! What can I help you with?"
+  - text: "Hey! Welcome to our online store. How can I be of service?"
+  - text: "Greetings! How can I make your shopping experience great today?"
+  - text: "Hello and welcome! What can I do for you today?"
+  - text: "Hello! How can I assist you in finding the perfect product?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_buy_phone:
+  - text: "Sure! We have great phones to choose from."
+
+  utter_buy_tv:
+  - text: "Of course! Let me show you our TV selection."
+
+  utter_buy_headphones:
+  - text: "Certainly! We have a variety of headphones."
+
+actions:
+  - action_product_inquiry
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

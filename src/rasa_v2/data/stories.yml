@@ -1,0 +1,48 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Buy Phone
+  steps:
+  - intent: buy_phone
+  - action: utter_buy_phone
+  - action: action_product_inquiry
+
+- story: Buy TV
+  steps:
+  - intent: buy_tv
+  - action: utter_buy_tv
+  - action: action_product_inquiry
+
+- story: Buy Headphones
+  steps:
+  - intent: buy_headphones
+  - action: utter_buy_headphones
+  - action: action_product_inquiry

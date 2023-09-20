@@ -1,0 +1,12 @@
+{
+  "mobile phone": "phone",
+  "phone": "phone",
+  "cell phone": "phone",
+  "smartphone": "phone",
+  "television": "TV",
+  "tv": "TV",
+  "earphones": "headphones",
+  "headphones": "headphones",
+  "audio headphones": "headphones",
+  "headphone": "headphones"
+}

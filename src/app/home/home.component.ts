@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
 
     this.route.params.subscribe(params => {
-      if(params['searchTerm'])  /* ovo searchTerm i tag dolazi iz routing modula */
+      if(params['searchTerm']) 
         this.products = this.productService.getAllProductsBySearchTerm(params['searchTerm'])
       else if(params['tag'])
         this.products = this.productService.getAllProductsByTag(params['tag'])  

@@ -1,7 +1,5 @@
 export class Product{
-    /*  constructor(id:number){
-         this.id = id;
-     }                               uzvicnik je umesto constructor*/
+   
      id!:number;
      name!:string;
      price!:number;

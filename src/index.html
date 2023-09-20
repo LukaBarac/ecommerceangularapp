@@ -9,5 +9,60 @@
 </head>
 <body>
   <app-root></app-root>
+  <style>
+    .rw-conversation-container .rw-header {
+      background-color: hsl(32, 94%, 55%);
+    }
+
+    .rw-conversation-container .rw-messages-container .rw-message .rw-client {
+      background-color: hsl(59, 80%, 51%);
+    }
+
+    .rw-conversation-container .rw-messages-container .rw-message .rw-client .rw-message-text{
+      color: hsla(4, 95%, 32%, 0.952);
+    }
+
+    .rw-launcher {
+      background-color: #4b8eb4;
+    }
+
+    .rw-conversation-container .rw-reply {
+      background-color: #b52626;
+      border: 1px #b52626 solid;
+    }
+
+  </style>
+    <!-- <h1>Placeholder</h1> -->
+    
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                title: 'Cody',
+                initPayload: '/greet',
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                profileAvatar: "/assets/images/avatar.png",
+                openLauncherImage: "/assets/images/chat_icon.png", 
+                showFullScreenButton: true,
+                showMessageDate: true,
+                inputTextFieldHint: 'Type away..'
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      </script>
 </body>
 </html>
+
+
+<!-- rasa run actions
+
+    rasa run -m models --enable-api --cors "*" -->

@@ -5,7 +5,7 @@
 </div>
 <div *ngIf="productPageTags" [style.justifyContent]="justifyContent">
     <a *ngFor="let tagName of productPageTags" routerLink="/tag/{{tagName}}">
-        {{tagName}}     <!-- zato sto je string ne treba mi objekat i dot notacija -->
+        {{tagName}}    
     </a>
 </div>
 

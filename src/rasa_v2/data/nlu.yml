@@ -1,0 +1,142 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi
+    - hello there
+    - hey there
+    - howdy
+    - hi there
+    - greetings
+    - hiya
+    - morning
+    - afternoon
+    - evening
+    - yo
+    - sup
+    - what's up
+    - hiya
+    - how's it going?
+    - how are you?
+    - hi friend
+    - good to see you
+    - what's new?
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - farewell
+    - adios
+    - take care
+    - catch you later
+    - see you soon
+    - see ya
+    - laters
+    - peace out
+    - so long
+    - bye for now
+    - gotta go
+    - until next time
+    - have a great day
+    - bye-bye for now
+    - goodbye, friend
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: buy_phone
+  examples: |
+    - I want to buy a phone.
+    - Can I get a new smartphone?
+    - Looking for a mobile phone.
+
+- intent: buy_tv
+  examples: |
+    - I'm interested in buying a TV.
+    - Show me some television options.
+    - Looking for a new television set.
+
+- intent: buy_headphones
+  examples: |
+    - I need to purchase headphones.
+    - Do you have any good headphones for sale?    
